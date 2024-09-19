@@ -312,6 +312,8 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+  border-radius: 50%;
+  /* border: round 100 100 100 100; */
 }
 
 /* EXPERIENCE SECTION */
