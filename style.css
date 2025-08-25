@@ -361,25 +361,210 @@ article .icon {
   position: relative;
 }
 
+/* Project Filter Buttons */
+.project-filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid rgb(163, 163, 163);
+  background: white;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 300ms ease;
+  color: rgb(85, 85, 85);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgb(53, 53, 53);
+  color: white;
+  border-color: rgb(53, 53, 53);
+}
+
+/* Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
+  transition: all 300ms ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.color-container.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* Featured Project Styling */
+.featured-project {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgb(240, 248, 255) 0%, rgb(250, 250, 250) 100%);
+  border: 2px solid rgb(53, 53, 53);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featured-project .project-title {
+  font-size: 1.5rem;
+  color: rgb(53, 53, 53);
+}
+
+/* Project Descriptions */
+.project-description {
+  font-size: 0.9rem;
+  color: rgb(85, 85, 85);
+  margin: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Project Stats/Tags */
+.project-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.stat-badge {
+  background: rgb(53, 53, 53);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .project-img {
   border-radius: 2rem;
   width: 90%;
   height: 90%;
+  transition: transform 300ms ease;
+}
+
+.color-container:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* Project Placeholder Styles */
+.project-placeholder {
+  border-radius: 2rem;
+  width: 90%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 300ms ease;
+  margin: auto;
+}
+
+.color-container:hover .project-placeholder {
+  transform: scale(1.05);
+}
+
+.codebuddy-placeholder {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.northwestern-placeholder {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.church-placeholder {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
 .project-title {
   margin: 1rem;
   color: black;
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
 
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 2% auto;
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 300ms ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(163, 163, 163);
+  transition: color 300ms ease;
+}
+
+.close:hover {
+  color: rgb(53, 53, 53);
+}
+
+.modal h2 {
+  color: rgb(53, 53, 53);
+  margin-bottom: 1rem;
+}
+
+.modal .project-stats {
+  justify-content: flex-start;
+  margin: 1rem 0;
 }
 
 /* CONTACT */
