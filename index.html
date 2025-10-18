@@ -51,7 +51,7 @@
           >
             Download CV
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
             Contact Info
           </button>
         </div>
@@ -105,13 +105,10 @@
           </div>
           <div class="text-container">
             <p>
-              Samuel Eli Setsofia is the founder of Codebuddy AI, a cloud-native AI education platform, and an MSAI candidate at Northwestern University. 
-              As a Research Assistant in Northwestern's C3 Lab, he investigates the persuasive impact of Large Language Models across diverse demographic contexts. 
-              Combining biomedical engineering expertise with advanced AI skills, he specializes in deep learning, reinforcement learning, and natural language processing. 
-              His recent work includes architecting hybrid LLM orchestration systems, developing multi-agent analytics for educational outcomes, 
-              and creating AI solutions that have improved faculty AI proficiency by 75% across academic departments. 
-              Samuel's expertise spans healthcare technology, educational AI, and social impact computing, positioning him as a leader in 
-              artificial intelligence and human-centered technology development.
+              I’m an AI engineer passionate about building intelligent systems that move ideas from research to real-world impact. 
+              As a recent graduate from the prestigious MSAI program atNorthwestern University, I design cloud-native, agentic AI solutions spanning RAG architectures, multi-agent systems, and ML Ops pipelines.
+               My work integrates large language models with scalable infrastructure to power human-centered innovation across education, healthcare, and global development. 
+               I’m driven by one goal — to transform how the world learns, builds, and collaborates with AI.
             </p>
           </div>
         </div>
@@ -120,7 +117,7 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#experience'"
+        onclick="location.href='#experience'"
       />
     </section>
     <section id="experience">
@@ -276,7 +273,7 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#projects'"
+        onclick="location.href='#projects'"
       />
     </section>
     
@@ -288,53 +285,184 @@
           <div class="project-filter-container">
             <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
             <button class="filter-btn" onclick="filterProjects('ai')">AI/ML</button>
+            <button class="filter-btn" onclick="filterProjects('medical')">Medical AI</button>
             <button class="filter-btn" onclick="filterProjects('fullstack')">Full-Stack</button>
-            <button class="filter-btn" onclick="filterProjects('research')">Research</button>
           </div>
 
           <div class="experience-details-container">
             <div class="about-containers projects-grid">
-              <!-- Featured Project: Codebuddy AI -->
-              <div class="details-container color-container featured-project" data-category="ai fullstack">
+              
+              <!-- Project 1: Acute Stroke Detection -->
+              <div class="details-container color-container" data-category="ai medical">
                 <div class="article-container">
-                  <div class="project-placeholder codebuddy-placeholder">
-                    <span>Codebuddy AI</span>
+                  <div class="project-placeholder stroke-placeholder">
+                    <span>Stroke Detection AI</span>
                   </div>
                 </div>
-                <h2 class="experience-sub-title project-title">🚀 Codebuddy AI - Cloud-Native Education Platform</h2>
-                <p class="project-description">Architected cloud-native AI education platform leveraging AWS infrastructure with hybrid LLM orchestration system. Delivered complete UI in 24 hours and full API implementation within one week.</p>
+                <h2 class="experience-sub-title project-title">Acute Stroke Detection using VAE</h2>
+                <p class="project-description">Deep learning project leveraging Variational Autoencoders to analyze facial symmetry and detect stroke symptoms through facial asymmetry reconstruction.</p>
                 <div class="project-stats">
-                  <span class="stat-badge">AWS</span>
-                  <span class="stat-badge">Amazon Bedrock</span>
-                  <span class="stat-badge">MCP</span>
-                  <span class="stat-badge">Multi-Agent AI</span>
+                  <span class="stat-badge">PyTorch</span>
+                  <span class="stat-badge">VAE</span>
+                  <span class="stat-badge">OpenCV</span>
+                  <span class="stat-badge">Mediapipe</span>
                 </div>
                 <div class="btn-container">
                   <button
-                    class="btn btn-color-1 project-btn"
-                    onclick="openProjectModal('codebuddy')"
+                    class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('stroke')"
                   >
                     View Details
                   </button>
                   <button
                     class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab'"
+                    onclick="location.href='https://github.com/Setsofia-lab/AcuteStrokeDetector'"
                   >
                     Github
                   </button>
                 </div>
               </div>
 
-              <div class="details-container color-container" data-category="research ai">
+              <!-- Project 2: Food Fact Generator -->
+              <div class="details-container color-container" data-category="ai">
+                <div class="article-container">
+                  <div class="project-placeholder food-placeholder">
+                    <span>Food Fact AI</span>
+                  </div>
+                </div>
+                <h2 class="experience-sub-title project-title">Food Fact Generator - GPT-2 Intelligence System</h2>
+                <p class="project-description">Advanced language generation model fine-tuned on 990K+ products to generate natural-language food descriptions with nutritional content and global availability data.</p>
+                <div class="project-stats">
+                  <span class="stat-badge">GPT-2</span>
+                  <span class="stat-badge">Transformers</span>
+                  <span class="stat-badge">NLP</span>
+                  <span class="stat-badge">990K Products</span>
+                </div>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('foodfact')"
+                  >
+                    View Details
+                  </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/foodfactgenerator'"
+                  >
+                    Github
+                  </button>
+                </div>
+              </div>
+
+              <!-- Project 3: MedEquip -->
+              <div class="details-container color-container" data-category="fullstack medical">
+                <div class="article-container">
+                  <div class="project-placeholder medequip-placeholder">
+                    <span>MedEquip System</span>
+                  </div>
+                </div>
+                <h2 class="experience-sub-title project-title">MedEquip - Medical Equipment Management</h2>
+                <p class="project-description">Full-stack maintenance management platform for healthcare institutions featuring predictive maintenance, real-time analytics, and inventory management.</p>
+                <div class="project-stats">
+                  <span class="stat-badge">React</span>
+                  <span class="stat-badge">TypeScript</span>
+                  <span class="stat-badge">Supabase</span>
+                  <span class="stat-badge">PostgreSQL</span>
+                </div>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('medequip')"
+                  >
+                    View Details
+                  </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/DextTechAI'"
+                  >
+                    Github
+                  </button>
+                </div>
+              </div>
+
+              <!-- Project 4: Statistical Analysis Platform -->
+              <div class="details-container color-container" data-category="ai fullstack">
+                <div class="article-container">
+                  <div class="project-placeholder stats-placeholder">
+                    <span>Analytics Platform</span>
+                  </div>
+                </div>
+                <h2 class="experience-sub-title project-title">Statistical Analysis & Visualization Platform</h2>
+                <p class="project-description">Cloud-based analytics system for the Global Poverty Research Lab at Kellogg, processing socioeconomic data for 2,000+ participants with real-time insights.</p>
+                <div class="project-stats">
+                  <span class="stat-badge">AWS</span>
+                  <span class="stat-badge">SageMaker</span>
+                  <span class="stat-badge">Plotly Dash</span>
+                  <span class="stat-badge">QuickSight</span>
+                </div>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('stats')"
+                  >
+                    View Details
+                  </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/MentalDistress_Project'"
+                  >
+                    Github
+                  </button>
+                </div>
+              </div>
+
+              <!-- Project 5: Low-Dose CT Reconstruction -->
+              <div class="details-container color-container" data-category="ai medical">
+                <div class="article-container">
+                  <div class="project-placeholder ct-placeholder">
+                    <span>CT Reconstruction</span>
+                  </div>
+                </div>
+                <h2 class="experience-sub-title project-title">Low-Dose CT Image Reconstruction</h2>
+                <p class="project-description">Deep learning system using U-Net architecture to reconstruct high-quality CT images from low-dose scans, reducing radiation exposure while maintaining diagnostic clarity.</p>
+                <div class="project-stats">
+                  <span class="stat-badge">U-Net</span>
+                  <span class="stat-badge">PyTorch</span>
+                  <span class="stat-badge">Medical Imaging</span>
+                  <span class="stat-badge">AWS GPU</span>
+                </div>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('ctrecon')"
+                  >
+                    View Details
+                  </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/LowdoseCTImages'"
+                  >
+                    Github
+                  </button>
+                </div>
+              </div>
+
+              <!-- Project 6: LLM Persuasion Research -->
+              <div class="details-container color-container" data-category="ai">
                 <div class="article-container">
                   <img
                     src="./assets/images.jpeg"
-                    alt="Project 1"
+                    alt="LLM Research"
                     class="project-img"
                   />
                 </div>
                 <h2 class="experience-sub-title project-title">LLM Persuasion Research</h2>
                 <p class="project-description">Investigating persuasive impact of Large Language Models across diverse demographic contexts at Northwestern University's C3 Lab.</p>
+                <div class="project-stats">
+                  <span class="stat-badge">LLMs</span>
+                  <span class="stat-badge">Research</span>
+                  <span class="stat-badge">Northwestern</span>
+                </div>
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
@@ -342,26 +470,22 @@
                   >
                     Github
                   </button>
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='#'"
-                  >
-                    Research
-                  </button>
                 </div>
               </div>
-              <!-- Northwestern University Projects -->
-              <div class="details-container color-container" data-category="ai research">
+
+              <!-- Project 7: AI Faculty Training Program -->
+              <div class="details-container color-container" data-category="ai">
                 <div class="article-container">
                   <div class="project-placeholder northwestern-placeholder">
                     <span>Northwestern AI</span>
                   </div>
                 </div>
                 <h2 class="experience-sub-title project-title">AI Faculty Training Program</h2>
-                <p class="project-description">Led development of generative AI curriculum and workshops for 100+ educators, achieving 75% improvement in faculty AI proficiency.</p>
+                <p class="project-description">Led development of generative AI curriculum and workshops for 100+ educators, achieving 75% improvement in faculty AI proficiency at Northwestern University.</p>
                 <div class="project-stats">
                   <span class="stat-badge">75% Improvement</span>
                   <span class="stat-badge">100+ Educators</span>
+                  <span class="stat-badge">Generative AI</span>
                 </div>
                 <div class="btn-container">
                   <button
@@ -373,7 +497,7 @@
                 </div>
               </div>
 
-              <!-- Church Management System -->
+              <!-- Project 8: Church Management System -->
               <div class="details-container color-container" data-category="fullstack">
                 <div class="article-container">
                   <div class="project-placeholder church-placeholder">
@@ -385,25 +509,26 @@
                 <div class="project-stats">
                   <span class="stat-badge">Neo4j</span>
                   <span class="stat-badge">CI/CD</span>
-                  <span class="stat-badge">40% Efficiency Gain</span>
+                  <span class="stat-badge">40% Efficiency</span>
                 </div>
                 <div class="btn-container">
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab'"
-                  >
-                    Github
-                  </button>
                   <button
                     class="btn btn-color-2 project-btn"
                     onclick="openProjectModal('church')"
                   >
                     View Details
                   </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab'"
+                  >
+                    Github
+                  </button>
                 </div>
               </div>
 
-              <div class="details-container color-container" data-category="ai research">
+              <!-- Project 9: Drug-Target Interaction Prediction -->
+              <div class="details-container color-container" data-category="ai medical">
                 <div class="article-container">
                   <img
                     src="./assets/lock and key.jpg"
@@ -421,19 +546,20 @@
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab/CRISPY_DTI'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    class="btn btn-color-2 project-btn"
                     onclick="openProjectModal('drug')"
                   >
                     View Details
                   </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/CRISPY_DTI'"
+                  >
+                    Github
+                  </button>
                 </div>
               </div>
 
+              <!-- Project 10: Oware RL Agent -->
               <div class="details-container color-container" data-category="ai">
                 <div class="article-container">
                   <img
@@ -452,19 +578,20 @@
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab/rl_agent_oware_game_ppo'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    class="btn btn-color-2 project-btn"
                     onclick="openProjectModal('oware')"
                   >
                     View Details
                   </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/rl_agent_oware_game_ppo'"
+                  >
+                    Github
+                  </button>
                 </div>
               </div>
 
+              <!-- Project 11: IRC Learning Companion ChatBot -->
               <div class="details-container color-container" data-category="ai">
                 <div class="article-container">
                   <img
@@ -483,9 +610,9 @@
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab'"
+                    onclick="openProjectModal('irc')"
                   >
-                    Github
+                    View Details
                   </button>
                   <button
                     class="btn btn-color-2 project-btn"
@@ -496,7 +623,8 @@
                 </div>
               </div>
 
-              <div class="details-container color-container" data-category="ai">
+              <!-- Project 12: Medical Eye Disease Classifier -->
+              <div class="details-container color-container" data-category="ai medical">
                 <div class="article-container">
                   <img
                     src="./assets/eye.png"
@@ -514,19 +642,20 @@
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/Setsofia-lab/ctimageclassifier_eyediseases'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    class="btn btn-color-2 project-btn"
                     onclick="openProjectModal('medical')"
                   >
                     View Details
                   </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/Setsofia-lab/ctimageclassifier_eyediseases'"
+                  >
+                    Github
+                  </button>
                 </div>
               </div>
 
+              <!-- Project 13: Research Paper AI Assistant -->
               <div class="details-container color-container" data-category="ai">
                 <div class="article-container">
                   <img
@@ -545,25 +674,26 @@
                 <div class="btn-container">
                   <button
                     class="btn btn-color-2 project-btn"
+                    onclick="openProjectModal('researchai')"
+                  >
+                    View Details
+                  </button>
+                  <button
+                    class="btn btn-color-2 project-btn"
                     onclick="location.href='https://github.com/Setsofia-lab/research_ai_app'"
                   >
                     Github
                   </button>
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="openProjectModal('research')"
-                  >
-                    View Details
-                  </button>
                 </div>
               </div>
+
             </div>
           </div>
           <img
             src="./assets/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#contact'"
+            onclick="location.href='#contact'"
           />
         </section>
 
@@ -584,7 +714,7 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:samuelsetsofia2025.1@u.northwestern.edu">samuelsetsofia2025.1@u.northwestern.edu</a></p>
+          <p><a href="mailto:setsofiaeli@gmail.com">setsofiaeli@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img

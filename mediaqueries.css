@@ -16,9 +16,6 @@
     .projects-grid {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-    .featured-project {
-      grid-column: 1 / -1;
-    }
   }
   
   @media screen and (max-width: 1200px) {
@@ -115,9 +112,6 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-    .featured-project {
-      grid-column: 1;
-    }
     .project-filter-container {
       flex-direction: column;
       align-items: center;
@@ -129,13 +123,24 @@
     }
     .project-description {
       font-size: 0.85rem;
+      margin: 0.8rem 1rem;
     }
     .project-title {
       font-size: 1.1rem;
+      margin: 0.8rem 1rem 0.5rem 1rem;
     }
     .stat-badge {
       font-size: 0.7rem;
       padding: 0.25rem 0.6rem;
+    }
+    .color-container {
+      min-height: auto;
+    }
+    .project-placeholder {
+      height: 180px;
+    }
+    #projects .article-container {
+      min-height: 180px;
     }
     .modal-content {
       margin: 5% auto;
