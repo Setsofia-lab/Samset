@@ -361,4 +361,116 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', function() {
     // Show all projects by default
     filterProjects('all');
+    
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Add parallax effect to sections
+    initParallaxEffect();
+    
+    // Add sparkle cursor effect
+    initSparkles();
+});
+
+// Scroll Animation Observer
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all sections and containers
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('animate-on-scroll');
+        observer.observe(section);
+    });
+    
+    // Observe project cards with stagger effect
+    document.querySelectorAll('.color-container').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+        card.classList.add('animate-on-scroll');
+        observer.observe(card);
+    });
+    
+    // Observe skill items
+    document.querySelectorAll('article').forEach((article, index) => {
+        article.style.transitionDelay = `${index * 0.05}s`;
+        article.classList.add('animate-on-scroll');
+        observer.observe(article);
+    });
+}
+
+// Parallax scrolling effect
+function initParallaxEffect() {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.section__pic-container');
+        
+        parallaxElements.forEach(element => {
+            const speed = 0.5;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+}
+
+// Sparkle cursor effect
+function initSparkles() {
+    let lastX = 0;
+    let lastY = 0;
+    let throttleTimer = false;
+    
+    document.addEventListener('mousemove', (e) => {
+        if (throttleTimer) return;
+        
+        throttleTimer = true;
+        setTimeout(() => {
+            throttleTimer = false;
+        }, 50);
+        
+        // Only create sparkles on movement
+        if (Math.abs(e.clientX - lastX) > 5 || Math.abs(e.clientY - lastY) > 5) {
+            createSparkle(e.clientX, e.clientY);
+            lastX = e.clientX;
+            lastY = e.clientY;
+        }
+    });
+}
+
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    
+    const size = Math.random() * 5 + 2;
+    sparkle.style.width = size + 'px';
+    sparkle.style.height = size + 'px';
+    
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1000);
+}
+
+// Add floating animation to images on hover
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.project-img');
+    images.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'float 2s ease-in-out infinite';
+            }, 10);
+        });
+    });
 });
